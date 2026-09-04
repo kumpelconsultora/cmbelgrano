@@ -187,11 +187,17 @@
       .hero {
         position: relative;
         overflow: hidden;
+        margin-bottom: 0;
         background:
           linear-gradient(115deg, rgba(14, 40, 72, 0.96) 0%, rgba(23, 61, 108, 0.86) 48%, rgba(23, 61, 108, 0.18) 100%),
           url("images/cmb-admission.png") right 8% center / min(52vw, 520px) no-repeat,
           var(--blue-deep);
         color: var(--white);
+      }
+
+      .hero::after {
+        content: none;
+        display: none;
       }
 
       .hero-grid {
@@ -343,6 +349,7 @@
       }
 
       .levels {
+        margin-top: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         background:
           linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 36%),
