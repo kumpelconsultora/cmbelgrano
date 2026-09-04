@@ -194,16 +194,6 @@
         color: var(--white);
       }
 
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: auto -4% -170px -4%;
-        height: 250px;
-        background: var(--paper);
-        transform: rotate(-3deg);
-        transform-origin: left top;
-      }
-
       .hero-grid {
         position: relative;
         z-index: 1;
@@ -212,7 +202,7 @@
         align-items: center;
         grid-template-columns: minmax(0, 1fr) 360px;
         gap: 56px;
-        padding: 76px 0 120px;
+        padding: 76px 0 96px;
       }
 
       .hero-grid > * {
@@ -353,7 +343,10 @@
       }
 
       .levels {
-        background: var(--blue-deep);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 36%),
+          var(--blue-deep);
         color: var(--white);
       }
 
