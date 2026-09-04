@@ -49,6 +49,7 @@
 
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       body {
@@ -57,6 +58,7 @@
         background: var(--paper);
         font-family: "Inter", Arial, sans-serif;
         line-height: 1.55;
+        overflow-x: hidden;
       }
 
       a {
@@ -95,6 +97,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 24px;
+        min-width: 0;
       }
 
       .brand {
@@ -102,6 +105,7 @@
         align-items: center;
         gap: 12px;
         min-width: 0;
+        max-width: 100%;
       }
 
       .brand-logo {
@@ -115,11 +119,13 @@
       .brand-text {
         display: grid;
         gap: 2px;
+        min-width: 0;
       }
 
       .brand-text strong {
         font-size: 0.95rem;
         line-height: 1.15;
+        overflow-wrap: anywhere;
       }
 
       .brand-text span {
@@ -134,6 +140,7 @@
         display: flex;
         align-items: center;
         gap: 18px;
+        flex: 0 0 auto;
         color: rgba(255, 255, 255, 0.78);
         font-size: 0.88rem;
         font-weight: 700;
@@ -156,6 +163,8 @@
         color: var(--white);
         box-shadow: 0 12px 28px rgba(222, 100, 73, 0.26);
         font-weight: 800;
+        max-width: 100%;
+        text-align: center;
         transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       }
 
@@ -206,6 +215,10 @@
         padding: 76px 0 120px;
       }
 
+      .hero-grid > * {
+        min-width: 0;
+      }
+
       .eyebrow {
         margin: 0 0 18px;
         color: var(--gold);
@@ -229,7 +242,7 @@
       }
 
       .hero-school {
-        width: max-content;
+        width: fit-content;
         max-width: 100%;
         margin: 14px 0 0;
         padding: 8px 12px;
@@ -237,6 +250,7 @@
         background: rgba(255, 255, 255, 0.1);
         color: rgba(255, 255, 255, 0.82);
         font-weight: 800;
+        overflow-wrap: anywhere;
       }
 
       h2 {
@@ -259,6 +273,7 @@
         align-items: center;
         gap: 16px;
         margin-bottom: 24px;
+        max-width: 100%;
       }
 
       .hero-lockup img {
@@ -305,9 +320,8 @@
       }
 
       .hero-card .date {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
+        display: grid;
+        gap: 8px;
         color: var(--gold);
         font-weight: 800;
       }
@@ -336,70 +350,6 @@
         margin: 16px 0 0;
         color: var(--muted);
         font-size: 1.08rem;
-      }
-
-      .proposal {
-        position: relative;
-        z-index: 2;
-      }
-
-      .proposal-grid {
-        display: grid;
-        grid-template-columns: 0.9fr 1.1fr;
-        gap: 30px;
-        align-items: start;
-      }
-
-      .quote-panel {
-        min-height: 100%;
-        padding: 34px;
-        border-radius: var(--radius);
-        background: var(--white);
-        box-shadow: var(--shadow);
-      }
-
-      .quote-panel p {
-        margin: 0;
-        color: var(--blue);
-        font-family: "Fraunces", Georgia, serif;
-        font-size: clamp(1.6rem, 3.4vw, 2.55rem);
-        line-height: 1.12;
-      }
-
-      .values-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .value {
-        min-height: 160px;
-        padding: 24px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.56);
-      }
-
-      .value:nth-child(2) {
-        background: rgba(220, 235, 247, 0.78);
-      }
-
-      .value:nth-child(3) {
-        background: rgba(241, 191, 77, 0.18);
-      }
-
-      .value:nth-child(4) {
-        background: rgba(92, 131, 98, 0.13);
-      }
-
-      .value p {
-        margin: 10px 0 0;
-        color: var(--muted);
-      }
-
-      .value h3,
-      .community-item h3 {
-        color: var(--blue);
       }
 
       .levels {
@@ -438,7 +388,8 @@
       }
 
       .badge {
-        width: max-content;
+        width: fit-content;
+        max-width: 100%;
         padding: 7px 10px;
         border-radius: 999px;
         background: rgba(241, 191, 77, 0.18);
@@ -447,6 +398,7 @@
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        overflow-wrap: anywhere;
       }
 
       .highlight .badge {
@@ -460,125 +412,6 @@
       }
 
       .level-card.highlight p {
-        color: var(--muted);
-      }
-
-      .admission {
-        background:
-          linear-gradient(90deg, rgba(255, 250, 240, 0.94), rgba(255, 250, 240, 0.84)),
-          var(--paper-soft);
-      }
-
-      .admission-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 380px;
-        gap: 36px;
-        align-items: center;
-      }
-
-      .steps {
-        display: grid;
-        gap: 14px;
-        margin-top: 30px;
-      }
-
-      .step {
-        display: grid;
-        grid-template-columns: 54px minmax(0, 1fr);
-        gap: 16px;
-        align-items: start;
-        padding: 20px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.66);
-      }
-
-      .step-number {
-        width: 54px;
-        height: 54px;
-        display: grid;
-        place-items: center;
-        border-radius: 50%;
-        background: var(--blue);
-        color: var(--white);
-        font-weight: 800;
-      }
-
-      .step p {
-        margin: 6px 0 0;
-        color: var(--muted);
-      }
-
-      .form-panel {
-        padding: 30px;
-        border-radius: var(--radius);
-        background: var(--blue);
-        color: var(--white);
-        box-shadow: var(--shadow);
-      }
-
-      .form-panel h2 {
-        font-size: clamp(1.85rem, 2.8vw, 2.8rem);
-      }
-
-      .form-panel p {
-        margin: 14px 0 24px;
-        color: rgba(255, 255, 255, 0.78);
-      }
-
-      .form-panel .button {
-        width: 100%;
-      }
-
-      .form-panel .eyebrow {
-        color: var(--gold);
-      }
-
-      .note {
-        margin-top: 16px;
-        color: rgba(255, 255, 255, 0.68);
-        font-size: 0.88rem;
-      }
-
-      .community {
-        background: var(--white);
-      }
-
-      .community-grid {
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 36px;
-        align-items: center;
-      }
-
-      .image-frame {
-        position: relative;
-        overflow: hidden;
-        border-radius: var(--radius);
-        background: var(--sky);
-        min-height: 390px;
-        display: grid;
-        place-items: center;
-      }
-
-      .image-frame img {
-        width: min(72%, 360px);
-        filter: drop-shadow(0 22px 34px rgba(23, 61, 108, 0.22));
-      }
-
-      .community-list {
-        display: grid;
-        gap: 16px;
-        margin-top: 26px;
-      }
-
-      .community-item {
-        padding-left: 18px;
-        border-left: 4px solid var(--gold);
-      }
-
-      .community-item p {
-        margin: 4px 0 0;
         color: var(--muted);
       }
 
@@ -625,10 +458,7 @@
             var(--blue-deep);
         }
 
-        .hero-grid,
-        .proposal-grid,
-        .admission-grid,
-        .community-grid {
+        .hero-grid {
           grid-template-columns: 1fr;
         }
 
@@ -670,6 +500,7 @@
 
         .nav {
           min-height: 66px;
+          gap: 12px;
         }
 
         .nav-links {
@@ -680,6 +511,10 @@
           min-height: 42px;
           padding: 0 14px;
           font-size: 0.88rem;
+        }
+
+        .brand-text span {
+          display: none;
         }
 
         .hero-grid {
@@ -709,23 +544,6 @@
           padding: 62px 0;
         }
 
-        .values-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .step {
-          grid-template-columns: 44px minmax(0, 1fr);
-          padding: 16px;
-        }
-
-        .step-number {
-          width: 44px;
-          height: 44px;
-        }
-
-        .image-frame {
-          min-height: 280px;
-        }
       }
     </style>
   </head>
@@ -740,7 +558,6 @@
           </span>
         </a>
         <div class="nav-links">
-          <a href="#propuesta">Propuesta</a>
           <a href="#niveles">Niveles</a>
           <a href="inscripciones/" class="button">Inscripciones</a>
         </div>
@@ -769,7 +586,7 @@
               <a class="button" href="inscripciones/">
                 Ver cupos e inscribirse
               </a>
-              <a class="button secondary" href="#inscripciones">Ver información</a>
+              <a class="button secondary" href="#niveles">Ver niveles</a>
             </div>
           </div>
 
@@ -777,52 +594,15 @@
             <img src="images/logo-colegio.png" alt="" aria-hidden="true" />
             <div class="hero-card-body">
               <div class="date">
-                <strong>1</strong>
-                <span>de octubre<br />00:00 hs</span>
+                <strong>3</strong>
+                <span>niveles educativos</span>
               </div>
               <p>
-                Desde ese momento se habilita el registro online para iniciar la
-                inscripción.
+                Inicial, Primario y Secundario con cupos y listas de espera en
+                la página de inscripciones.
               </p>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section class="section proposal" id="propuesta">
-        <div class="container proposal-grid">
-          <div class="quote-panel">
-            <p>Educación para crecer con identidad, autonomía y compromiso.</p>
-          </div>
-          <div>
-            <div class="section-intro">
-              <p class="eyebrow">Nuestra propuesta educativa</p>
-              <h2>Una comunidad que acompaña cada etapa.</h2>
-              <p>
-                La escuela sostiene un modelo basado en la persona, orientado al
-                bienestar, la paz social y la construcción de valores éticos y
-                morales.
-              </p>
-            </div>
-            <div class="values-grid">
-              <article class="value">
-                <h3>Identidad</h3>
-                <p>Un entorno que ayuda a cada estudiante a reconocerse y confiar en su propio camino.</p>
-              </article>
-              <article class="value">
-                <h3>Autonomía</h3>
-                <p>Herramientas para tomar decisiones, resolver desafíos y aprender con criterio.</p>
-              </article>
-              <article class="value">
-                <h3>Participación</h3>
-                <p>Prácticas de convivencia y participación democrática dentro de la vida escolar.</p>
-              </article>
-              <article class="value">
-                <h3>Calidad</h3>
-                <p>Estrategias dinámicas pensadas para promover mejores aprendizajes.</p>
-              </article>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -858,84 +638,6 @@
                 <p>Registro para futuras vacantes y continuidad de la trayectoria escolar.</p>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section admission" id="inscripciones">
-        <div class="container admission-grid">
-          <div>
-            <div class="section-intro">
-              <p class="eyebrow">Inscripciones</p>
-              <h2>El registro se realiza online.</h2>
-              <p>
-                El día 1 de octubre a partir de las 00:00 hs se abrirán las
-                inscripciones. Podrás revisar los cupos y avanzar haciendo clic
-                en "Ver cupos e inscribirse".
-              </p>
-            </div>
-            <div class="steps" aria-label="Pasos para la inscripción">
-              <article class="step">
-                <span class="step-number">1</span>
-                <div>
-                  <h3>Revisar el nivel</h3>
-                  <p>Identifica si corresponde Sala de 4, Nivel Primario o Nivel Secundario.</p>
-                </div>
-              </article>
-              <article class="step">
-                <span class="step-number">2</span>
-                <div>
-                  <h3>Completar el formulario</h3>
-              <p>El botón abre la página de inscripciones con el estado de cupos.</p>
-                </div>
-              </article>
-              <article class="step">
-                <span class="step-number">3</span>
-                <div>
-                  <h3>Esperar la respuesta</h3>
-                  <p>La institución revisará la solicitud según disponibilidad de vacantes.</p>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <aside class="form-panel">
-            <p class="eyebrow">Formulario oficial</p>
-              <h2>Cupos, preinscripción y lista de espera</h2>
-            <p>
-              Primero revisá el estado por nivel. Desde la página de
-              inscripciones vas a poder acceder al formulario oficial.
-            </p>
-            <a class="button" href="inscripciones/">
-              Ver cupos e inscribirse
-            </a>
-            <div class="note">137 / D-179 - Escuela Privada Primaria y Secundaria</div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section community">
-        <div class="container community-grid">
-          <div class="image-frame">
-              <img src="images/cmb-admission.png" alt="Ilustración educativa del sitio Manuel Belgrano" />
-          </div>
-          <div>
-            <p class="eyebrow">Nuestra comunidad</p>
-            <h2>Un colegio para aprender con otros.</h2>
-            <div class="community-list">
-              <article class="community-item">
-                <h3>Valores compartidos</h3>
-                <p>Una propuesta que integra formación académica, convivencia y responsabilidad.</p>
-              </article>
-              <article class="community-item">
-                <h3>Acompañamiento</h3>
-                <p>Familias, docentes y estudiantes participando de una misma trayectoria.</p>
-              </article>
-              <article class="community-item">
-                <h3>Mirada integral</h3>
-                <p>Educación pensada para las necesidades integrales de cada etapa.</p>
-              </article>
-            </div>
           </div>
         </div>
       </section>

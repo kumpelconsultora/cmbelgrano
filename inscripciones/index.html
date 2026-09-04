@@ -45,6 +45,7 @@
         background: var(--paper);
         font-family: "Inter", Arial, sans-serif;
         line-height: 1.55;
+        overflow-x: hidden;
       }
 
       a {
@@ -78,12 +79,15 @@
         align-items: center;
         justify-content: space-between;
         gap: 24px;
+        min-width: 0;
       }
 
       .brand {
         display: inline-flex;
         align-items: center;
         gap: 12px;
+        min-width: 0;
+        max-width: 100%;
       }
 
       .brand-logo {
@@ -96,11 +100,13 @@
       .brand-text {
         display: grid;
         gap: 2px;
+        min-width: 0;
       }
 
       .brand-text strong {
         font-size: 0.95rem;
         line-height: 1.15;
+        overflow-wrap: anywhere;
       }
 
       .brand-text span {
@@ -115,6 +121,7 @@
         display: flex;
         align-items: center;
         gap: 18px;
+        flex: 0 0 auto;
         color: rgba(255, 255, 255, 0.78);
         font-size: 0.88rem;
         font-weight: 700;
@@ -131,6 +138,8 @@
         color: var(--white);
         box-shadow: 0 12px 28px rgba(222, 100, 73, 0.26);
         font-weight: 800;
+        max-width: 100%;
+        text-align: center;
         transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       }
 
@@ -162,6 +171,11 @@
         align-items: end;
         gap: 42px;
         padding: 76px 0;
+      }
+
+      .hero-grid > *,
+      .form-grid > * {
+        min-width: 0;
       }
 
       .eyebrow {
@@ -209,6 +223,7 @@
       }
 
       .mini-badge {
+        max-width: 100%;
         padding: 8px 11px;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 999px;
@@ -216,6 +231,7 @@
         color: rgba(255, 255, 255, 0.86);
         font-size: 0.86rem;
         font-weight: 800;
+        overflow-wrap: anywhere;
       }
 
       .date-card {
@@ -232,6 +248,7 @@
         font-family: "Fraunces", Georgia, serif;
         font-size: 3.2rem;
         line-height: 1;
+        overflow-wrap: anywhere;
       }
 
       .date-card p {
@@ -262,6 +279,10 @@
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 18px;
+      }
+
+      .availability-grid > * {
+        min-width: 0;
       }
 
       .course-card {
@@ -301,7 +322,7 @@
       }
 
       .status {
-        width: max-content;
+        width: fit-content;
         max-width: 100%;
         padding: 7px 10px;
         border-radius: 999px;
@@ -311,6 +332,7 @@
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        overflow-wrap: anywhere;
       }
 
       .featured .status {
@@ -467,6 +489,10 @@
           position: static;
         }
 
+        .nav {
+          gap: 12px;
+        }
+
         .nav-links a:not(.button) {
           display: none;
         }
@@ -481,7 +507,7 @@
         }
 
         .brand-text span {
-          font-size: 0.66rem;
+          display: none;
         }
 
         .nav-links .button {
