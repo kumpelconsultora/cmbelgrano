@@ -156,15 +156,44 @@
       }
 
       .hero {
+        position: relative;
         overflow: hidden;
         background:
-          linear-gradient(115deg, rgba(14, 40, 72, 0.98), rgba(23, 61, 108, 0.9)),
-          url("../images/cmb-admission.png") right 6% bottom -28px / min(38vw, 360px) no-repeat,
+          linear-gradient(115deg, rgba(14, 40, 72, 0.98), rgba(23, 61, 108, 0.92)),
           var(--blue-deep);
         color: var(--white);
       }
 
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, transparent 0 56%, rgba(255, 255, 255, 0.075) 56% 56.35%, transparent 56.35%),
+          repeating-linear-gradient(135deg, transparent 0 22px, rgba(241, 191, 77, 0.13) 22px 24px, transparent 24px 58px),
+          repeating-linear-gradient(90deg, transparent 0 82px, rgba(255, 255, 255, 0.055) 82px 83px);
+        clip-path: polygon(54% 0, 100% 0, 100% 100%, 46% 100%);
+        opacity: 0.86;
+      }
+
+      .hero::after {
+        content: "N° 137 / D-179";
+        position: absolute;
+        right: clamp(18px, 5vw, 76px);
+        bottom: clamp(18px, 5vw, 66px);
+        color: rgba(255, 255, 255, 0.075);
+        font-family: "Fraunces", Georgia, serif;
+        font-size: clamp(4rem, 10vw, 8.4rem);
+        font-weight: 800;
+        line-height: 1;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+
       .hero-grid {
+        position: relative;
+        z-index: 1;
         min-height: 430px;
         display: grid;
         grid-template-columns: minmax(0, 1fr) 330px;
@@ -534,6 +563,15 @@
           background:
             linear-gradient(115deg, rgba(14, 40, 72, 0.98), rgba(23, 61, 108, 0.9)),
             var(--blue-deep);
+        }
+
+        .hero::before {
+          clip-path: none;
+          opacity: 0.34;
+        }
+
+        .hero::after {
+          display: none;
         }
 
         h1 {
